@@ -1,0 +1,300 @@
+
+root@mongodb-rep1:~# ================== PostgreSQL Installation on Ubuntu 22.0 =================================================^C
+root@mongodb-rep1:~# Update  Package List:^C
+root@mongodb-rep1:~# sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Get:2 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 InRelease [3,005 B]
+Hit:3 http://in.archive.ubuntu.com/ubuntu jammy InRelease
+Get:4 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0/multiverse arm64 Packages [24.3 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2,110 kB]
+Get:7 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0/multiverse amd64 Packages [24.6 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [329 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2,353 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [2,899 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [392 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [3,008 kB]
+Get:14 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [509 kB]
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [965 kB]
+Get:16 http://in.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [528 kB]
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [207 kB]
+Get:18 http://in.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,192 kB]
+Get:19 http://in.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [293 kB]
+Fetched 15.2 MB in 8s (1,836 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+74 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@mongodb-rep1:~#
+root@mongodb-rep1:~# Install PostgreSQL^C
+root@mongodb-rep1:~# sudo apt install postgresql postgresql-contrib
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcommon-sense-perl libjson-perl libjson-xs-perl libllvm14 libpq5 libsensors-config libsensors5 libtypes-serialiser-perl postgresql-14
+  postgresql-client-14 postgresql-client-common postgresql-common ssl-cert sysstat
+Suggested packages:
+  lm-sensors postgresql-doc postgresql-doc-14 isag
+The following NEW packages will be installed:
+  libcommon-sense-perl libjson-perl libjson-xs-perl libllvm14 libpq5 libsensors-config libsensors5 libtypes-serialiser-perl postgresql postgresql-14
+  postgresql-client-14 postgresql-client-common postgresql-common postgresql-contrib ssl-cert sysstat
+0 upgraded, 16 newly installed, 0 to remove and 74 not upgraded.
+Need to get 42.5 MB of archives.
+After this operation, 162 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libcommon-sense-perl amd64 3.75-2build1 [21.1 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libjson-perl all 4.04000-1 [81.8 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libtypes-serialiser-perl all 1.01-1 [11.6 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libjson-xs-perl amd64 4.030-1build3 [87.2 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libllvm14 amd64 1:14.0.0-1ubuntu1.1 [24.0 MB]
+Get:6 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpq5 amd64 14.15-0ubuntu0.22.04.1 [150 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libsensors-config all 1:3.6.0-7ubuntu1 [5,274 B]
+Get:8 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libsensors5 amd64 1:3.6.0-7ubuntu1 [26.3 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql-client-common all 238 [29.6 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 postgresql-client-14 amd64 14.15-0ubuntu0.22.04.1 [1,225 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 ssl-cert all 1.1.2 [17.4 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql-common all 238 [169 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 postgresql-14 amd64 14.15-0ubuntu0.22.04.1 [16.2 MB]
+Get:14 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql all 14+238 [3,288 B]
+Get:15 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql-contrib all 14+238 [3,292 B]
+Get:16 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 sysstat amd64 12.5.2-2ubuntu0.2 [487 kB]
+Fetched 42.5 MB in 11s (3,881 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libcommon-sense-perl:amd64.
+(Reading database ... 110479 files and directories currently installed.)
+Preparing to unpack .../00-libcommon-sense-perl_3.75-2build1_amd64.deb ...
+Unpacking libcommon-sense-perl:amd64 (3.75-2build1) ...
+Selecting previously unselected package libjson-perl.
+Preparing to unpack .../01-libjson-perl_4.04000-1_all.deb ...
+Unpacking libjson-perl (4.04000-1) ...
+Selecting previously unselected package libtypes-serialiser-perl.
+Preparing to unpack .../02-libtypes-serialiser-perl_1.01-1_all.deb ...
+Unpacking libtypes-serialiser-perl (1.01-1) ...
+Selecting previously unselected package libjson-xs-perl.
+Preparing to unpack .../03-libjson-xs-perl_4.030-1build3_amd64.deb ...
+Unpacking libjson-xs-perl (4.030-1build3) ...
+Selecting previously unselected package libllvm14:amd64.
+Preparing to unpack .../04-libllvm14_1%3a14.0.0-1ubuntu1.1_amd64.deb ...
+Unpacking libllvm14:amd64 (1:14.0.0-1ubuntu1.1) ...
+Selecting previously unselected package libpq5:amd64.
+Preparing to unpack .../05-libpq5_14.15-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking libpq5:amd64 (14.15-0ubuntu0.22.04.1) ...
+Selecting previously unselected package libsensors-config.
+Preparing to unpack .../06-libsensors-config_1%3a3.6.0-7ubuntu1_all.deb ...
+Unpacking libsensors-config (1:3.6.0-7ubuntu1) ...
+Selecting previously unselected package libsensors5:amd64.
+Preparing to unpack .../07-libsensors5_1%3a3.6.0-7ubuntu1_amd64.deb ...
+Unpacking libsensors5:amd64 (1:3.6.0-7ubuntu1) ...
+Selecting previously unselected package postgresql-client-common.
+Preparing to unpack .../08-postgresql-client-common_238_all.deb ...
+Unpacking postgresql-client-common (238) ...
+Selecting previously unselected package postgresql-client-14.
+Preparing to unpack .../09-postgresql-client-14_14.15-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking postgresql-client-14 (14.15-0ubuntu0.22.04.1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../10-ssl-cert_1.1.2_all.deb ...
+Unpacking ssl-cert (1.1.2) ...
+Selecting previously unselected package postgresql-common.
+Preparing to unpack .../11-postgresql-common_238_all.deb ...
+Adding 'diversion of /usr/bin/pg_config to /usr/bin/pg_config.libpq-dev by postgresql-common'
+Unpacking postgresql-common (238) ...
+Selecting previously unselected package postgresql-14.
+Preparing to unpack .../12-postgresql-14_14.15-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking postgresql-14 (14.15-0ubuntu0.22.04.1) ...
+Selecting previously unselected package postgresql.
+Preparing to unpack .../13-postgresql_14+238_all.deb ...
+Unpacking postgresql (14+238) ...
+Selecting previously unselected package postgresql-contrib.
+Preparing to unpack .../14-postgresql-contrib_14+238_all.deb ...
+Unpacking postgresql-contrib (14+238) ...
+Selecting previously unselected package sysstat.
+Preparing to unpack .../15-sysstat_12.5.2-2ubuntu0.2_amd64.deb ...
+Unpacking sysstat (12.5.2-2ubuntu0.2) ...
+Setting up postgresql-client-common (238) ...
+Setting up libsensors-config (1:3.6.0-7ubuntu1) ...
+Setting up libpq5:amd64 (14.15-0ubuntu0.22.04.1) ...
+Setting up libcommon-sense-perl:amd64 (3.75-2build1) ...
+Setting up postgresql-client-14 (14.15-0ubuntu0.22.04.1) ...
+update-alternatives: using /usr/share/postgresql/14/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up ssl-cert (1.1.2) ...
+Setting up libsensors5:amd64 (1:3.6.0-7ubuntu1) ...
+Setting up libllvm14:amd64 (1:14.0.0-1ubuntu1.1) ...
+Setting up libtypes-serialiser-perl (1.01-1) ...
+Setting up libjson-perl (4.04000-1) ...
+Setting up sysstat (12.5.2-2ubuntu0.2) ...
+
+Creating config file /etc/default/sysstat with new version
+update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+Created symlink /etc/systemd/system/sysstat.service.wants/sysstat-collect.timer ? /lib/systemd/system/sysstat-collect.timer.
+Created symlink /etc/systemd/system/sysstat.service.wants/sysstat-summary.timer ? /lib/systemd/system/sysstat-summary.timer.
+Created symlink /etc/systemd/system/multi-user.target.wants/sysstat.service ? /lib/systemd/system/sysstat.service.
+Setting up libjson-xs-perl (4.030-1build3) ...
+Setting up postgresql-common (238) ...
+Adding user postgres to group ssl-cert
+
+Creating config file /etc/postgresql-common/createcluster.conf with new version
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service ? /lib/systemd/system/postgresql.service.
+Setting up postgresql-14 (14.15-0ubuntu0.22.04.1) ...
+Creating new PostgreSQL cluster 14/main ...
+/usr/lib/postgresql/14/bin/initdb -D /var/lib/postgresql/14/main --auth-local peer --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/14/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+update-alternatives: using /usr/share/postgresql/14/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Setting up postgresql-contrib (14+238) ...
+Setting up postgresql (14+238) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.9) ...
+Scanning processes...
+Scanning candidates...
+Scanning linux images...
+
+Restarting services...
+Service restarts being deferred:
+ systemctl restart ModemManager.service
+ systemctl restart cron.service
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart irqbalance.service
+ systemctl restart mongod.service
+ systemctl restart multipathd.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart nfs-blkmap.service
+ systemctl restart nfs-idmapd.service
+ systemctl restart nfs-mountd.service
+ systemctl restart nfsdcld.service
+ systemctl restart open-vm-tools.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart rpc-statd.service
+ systemctl restart rpcbind.service
+ systemctl restart rsyslog.service
+ systemctl restart ssh.service
+ systemctl restart systemd-journald.service
+ systemctl restart systemd-logind.service
+ /etc/needrestart/restart.d/systemd-manager
+ systemctl restart systemd-networkd.service
+ systemctl restart systemd-resolved.service
+ systemctl restart systemd-timesyncd.service
+ systemctl restart systemd-udevd.service
+ systemctl restart udisks2.service
+ systemctl restart unattended-upgrades.service
+ systemctl restart upower.service
+ systemctl restart user@1000.service
+ systemctl restart user@1002.service
+ systemctl restart vgauth.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+root@mongodb-rep1:~#
+root@mongodb-rep1:~# Verify the Installation^C
+root@mongodb-rep1:~# sudo systemctl status postgresql
+? postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Fri 2025-02-28 07:50:10 UTC; 36s ago
+    Process: 1296022 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 1296022 (code=exited, status=0/SUCCESS)
+        CPU: 3ms
+
+Feb 28 07:50:10 mongodb-rep1 systemd[1]: Starting PostgreSQL RDBMS...
+Feb 28 07:50:10 mongodb-rep1 systemd[1]: Finished PostgreSQL RDBMS.
+root@mongodb-rep1:~#
+root@mongodb-rep1:~# Switch to the PostgreSQL User^C
+root@mongodb-rep1:~# sudo -i -u postgres
+postgres@mongodb-rep1:~$ Now, you are logged in as the postgres user.^C
+postgres@mongodb-rep1:~$
+postgres@mongodb-rep1:~$ Access the PostgreSQL Command Line Interface (CLI)^C
+postgres@mongodb-rep1:~$ psql
+psql (14.15 (Ubuntu 14.15-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# 
+postgres=# 
+postgres@mongodb-rep1:~$
+postgres@mongodb-rep1:~$
+postgres@mongodb-rep1:~$ psql
+psql (14.15 (Ubuntu 14.15-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# show databases;
+ERROR:  unrecognized configuration parameter "databases"
+postgres=#
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(3 rows)
+
+postgres=# exit
+Create a New PostgreSQL Role (Optional)  :
+postgres@mongodb-rep1:~$ 
+postgres@mongodb-rep1:~$ createuser --interactive --pwprompt
+Enter name of role to add: venkatas
+Enter password for new role:
+Enter it again:
+Shall the new role be a superuser? (y/n) y
+postgres@mongodb-rep1:~$ createuser --superuser venkata
+postgres@mongodb-rep1:~$ Create a New Database 
+postgres@mongodb-rep1:~$ createdb mypostgresdb
+postgres@mongodb-rep1:~$
+postgres@mongodb-rep1:~$ To assign ownership of a database to a specific user^C
+postgres@mongodb-rep1:~$ createdb -O venkatas mydatabase
+postgres@mongodb-rep1:~$ createdb -O venkatas mypostgresdb
+createdb: error: database creation failed: ERROR:  database "mypostgresdb" already exists
+postgres@mongodb-rep1:~$
+postgres@mongodb-rep1:~$ Access the Database^C
+postgres@mongodb-rep1:~$ psql -d mypostgresdb -U venkatas
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "venkatas"
+postgres@mongodb-rep1:~$ psql -d mypostgresdb -U venkata
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "venkata"
+postgres@mongodb-rep1:~$ psql -d mydatabase -U venkata
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "venkata"
+postgres@mongodb-rep1:~$
+postgres@mongodb-rep1:~$ Steps to Resolve "Peer Authentication Failed"^C
+postgres@mongodb-rep1:~$ sudo vi /etc/postgresql/14/main/pg_hba.conf
+[sudo] password for postgres:
+Sorry, try again.
+[sudo] password for postgres:
+sudo: 1 incorrect password attempt
+postgres@mongodb-rep1:~$
+postgres@mongodb-rep1:~$ exit
+logout
+root@mongodb-rep1:~# sudo vi /etc/postgresql/14/main/pg_hba.conf
+root@mongodb-rep1:~# Change the Authentication Method peer to md5 in the above file ^C
+root@mongodb-rep1:~#
+root@mongodb-rep1:~# Restart ^C
+root@mongodb-rep1:~# sudo systemctl restart postgresql
+root@mongodb-rep1:~# psql -d mypostgresdb -U venkatas
+Password for user venkatas:
+psql (14.15 (Ubuntu 14.15-0ubuntu0.22.04.1))
+Type "help" for help.
+
+mypostgresdb=#
