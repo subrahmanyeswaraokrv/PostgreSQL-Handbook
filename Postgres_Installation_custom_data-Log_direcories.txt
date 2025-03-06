@@ -1,0 +1,436 @@
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v25.0 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? SSH session to touadmin@192.1xx.xx.xxx                             ¦
+    ¦   • Direct SSH      :  ?                                             ¦
+    ¦   • SSH compression :  ?                                             ¦
+    ¦   • SSH-browser     :  ?                                             ¦
+    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
+    ¦                                                                      ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 5.15.0-125-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+  System information as of Thu Mar  6 03:52:27 PM IST 2025
+
+  System load:  0.0126953125       Processes:              228
+  Usage of /:   23.0% of 96.83GB   Users logged in:        2
+  Memory usage: 53%                IPv4 address for ens34: 192.1xx.xx.xxx
+  Swap usage:   15%
+
+  => There are 2 zombie processes.
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+82 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+*** System restart required ***
+Last login: Thu Feb 27 15:21:09 2025 from 192.168.62.60
+touadmin@dev-shared-postgres:~$
+touadmin@dev-shared-postgres:~$
+touadmin@dev-shared-postgres:/postgres$
+touadmin@dev-shared-postgres:/postgres$ sudo apt update
+[sudo] password for touadmin:
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Hit:2 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 InRelease
+Hit:3 http://in.archive.ubuntu.com/ubuntu jammy InRelease
+Get:4 http://in.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Hit:5 https://repo.zabbix.com/zabbix-agent2-plugins/1/ubuntu jammy InRelease
+Hit:6 https://repo.zabbix.com/zabbix/6.0/ubuntu jammy InRelease
+Get:7 http://in.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Fetched 384 kB in 2s (202 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+80 packages can be upgraded. Run 'apt list --upgradable' to see them.
+touadmin@dev-shared-postgres:/postgres$
+touadmin@dev-shared-postgres:/postgres$ sudo apt install postgresql postgresql-contrib
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcommon-sense-perl libjson-perl libjson-xs-perl libllvm14 libpq5 libsensors-config libsensors5 libtypes-serialiser-perl postgresql-14
+  postgresql-client-14 postgresql-client-common postgresql-common ssl-cert sysstat
+Suggested packages:
+  lm-sensors postgresql-doc postgresql-doc-14 isag
+The following NEW packages will be installed:
+  libcommon-sense-perl libjson-perl libjson-xs-perl libllvm14 libpq5 libsensors-config libsensors5 libtypes-serialiser-perl postgresql postgresql-14
+  postgresql-client-14 postgresql-client-common postgresql-common postgresql-contrib ssl-cert sysstat
+0 upgraded, 16 newly installed, 0 to remove and 80 not upgraded.
+Need to get 42.5 MB of archives.
+After this operation, 162 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libcommon-sense-perl amd64 3.75-2build1 [21.1 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libjson-perl all 4.04000-1 [81.8 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libtypes-serialiser-perl all 1.01-1 [11.6 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libjson-xs-perl amd64 4.030-1build3 [87.2 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libllvm14 amd64 1:14.0.0-1ubuntu1.1 [24.0 MB]
+Get:6 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpq5 amd64 14.17-0ubuntu0.22.04.1 [152 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libsensors-config all 1:3.6.0-7ubuntu1 [5,274 B]
+Get:8 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 libsensors5 amd64 1:3.6.0-7ubuntu1 [26.3 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql-client-common all 238 [29.6 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 postgresql-client-14 amd64 14.17-0ubuntu0.22.04.1 [1,246 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 ssl-cert all 1.1.2 [17.4 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql-common all 238 [169 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 postgresql-14 amd64 14.17-0ubuntu0.22.04.1 [16.2 MB]
+Get:14 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql all 14+238 [3,288 B]
+Get:15 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 postgresql-contrib all 14+238 [3,292 B]
+Get:16 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 sysstat amd64 12.5.2-2ubuntu0.2 [487 kB]
+Fetched 42.5 MB in 10s (4,169 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libcommon-sense-perl:amd64.
+(Reading database ... 117366 files and directories currently installed.)
+Preparing to unpack .../00-libcommon-sense-perl_3.75-2build1_amd64.deb ...
+Unpacking libcommon-sense-perl:amd64 (3.75-2build1) ...
+Selecting previously unselected package libjson-perl.
+Preparing to unpack .../01-libjson-perl_4.04000-1_all.deb ...
+Unpacking libjson-perl (4.04000-1) ...
+Selecting previously unselected package libtypes-serialiser-perl.
+Preparing to unpack .../02-libtypes-serialiser-perl_1.01-1_all.deb ...
+Unpacking libtypes-serialiser-perl (1.01-1) ...
+Selecting previously unselected package libjson-xs-perl.
+Preparing to unpack .../03-libjson-xs-perl_4.030-1build3_amd64.deb ...
+Unpacking libjson-xs-perl (4.030-1build3) ...
+Selecting previously unselected package libllvm14:amd64.
+Preparing to unpack .../04-libllvm14_1%3a14.0.0-1ubuntu1.1_amd64.deb ...
+Unpacking libllvm14:amd64 (1:14.0.0-1ubuntu1.1) ...
+Selecting previously unselected package libpq5:amd64.
+Preparing to unpack .../05-libpq5_14.17-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking libpq5:amd64 (14.17-0ubuntu0.22.04.1) ...
+Selecting previously unselected package libsensors-config.
+Preparing to unpack .../06-libsensors-config_1%3a3.6.0-7ubuntu1_all.deb ...
+Unpacking libsensors-config (1:3.6.0-7ubuntu1) ...
+Selecting previously unselected package libsensors5:amd64.
+Preparing to unpack .../07-libsensors5_1%3a3.6.0-7ubuntu1_amd64.deb ...
+Unpacking libsensors5:amd64 (1:3.6.0-7ubuntu1) ...
+Selecting previously unselected package postgresql-client-common.
+Preparing to unpack .../08-postgresql-client-common_238_all.deb ...
+Unpacking postgresql-client-common (238) ...
+Selecting previously unselected package postgresql-client-14.
+Preparing to unpack .../09-postgresql-client-14_14.17-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking postgresql-client-14 (14.17-0ubuntu0.22.04.1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../10-ssl-cert_1.1.2_all.deb ...
+Unpacking ssl-cert (1.1.2) ...
+Selecting previously unselected package postgresql-common.
+Preparing to unpack .../11-postgresql-common_238_all.deb ...
+Adding 'diversion of /usr/bin/pg_config to /usr/bin/pg_config.libpq-dev by postgresql-common'
+Unpacking postgresql-common (238) ...
+Selecting previously unselected package postgresql-14.
+Preparing to unpack .../12-postgresql-14_14.17-0ubuntu0.22.04.1_amd64.deb ...
+Unpacking postgresql-14 (14.17-0ubuntu0.22.04.1) ...
+Selecting previously unselected package postgresql.
+Preparing to unpack .../13-postgresql_14+238_all.deb ...
+Unpacking postgresql (14+238) ...
+Selecting previously unselected package postgresql-contrib.
+Preparing to unpack .../14-postgresql-contrib_14+238_all.deb ...
+Unpacking postgresql-contrib (14+238) ...
+Selecting previously unselected package sysstat.
+Preparing to unpack .../15-sysstat_12.5.2-2ubuntu0.2_amd64.deb ...
+Unpacking sysstat (12.5.2-2ubuntu0.2) ...
+Setting up postgresql-client-common (238) ...
+Setting up libsensors-config (1:3.6.0-7ubuntu1) ...
+Setting up libpq5:amd64 (14.17-0ubuntu0.22.04.1) ...
+Setting up libcommon-sense-perl:amd64 (3.75-2build1) ...
+Setting up postgresql-client-14 (14.17-0ubuntu0.22.04.1) ...
+update-alternatives: using /usr/share/postgresql/14/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up ssl-cert (1.1.2) ...
+Setting up libsensors5:amd64 (1:3.6.0-7ubuntu1) ...
+Setting up libllvm14:amd64 (1:14.0.0-1ubuntu1.1) ...
+Setting up libtypes-serialiser-perl (1.01-1) ...
+Setting up libjson-perl (4.04000-1) ...
+Setting up sysstat (12.5.2-2ubuntu0.2) ...
+
+Creating config file /etc/default/sysstat with new version
+update-alternatives: using /usr/bin/sar.sysstat to provide /usr/bin/sar (sar) in auto mode
+Created symlink /etc/systemd/system/sysstat.service.wants/sysstat-collect.timer ? /lib/systemd/system/sysstat-collect.timer.
+Created symlink /etc/systemd/system/sysstat.service.wants/sysstat-summary.timer ? /lib/systemd/system/sysstat-summary.timer.
+Created symlink /etc/systemd/system/multi-user.target.wants/sysstat.service ? /lib/systemd/system/sysstat.service.
+Setting up libjson-xs-perl (4.030-1build3) ...
+Setting up postgresql-common (238) ...
+Adding user postgres to group ssl-cert
+
+Creating config file /etc/postgresql-common/createcluster.conf with new version
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service ? /lib/systemd/system/postgresql.service.
+Setting up postgresql-14 (14.17-0ubuntu0.22.04.1) ...
+Creating new PostgreSQL cluster 14/main ...
+/usr/lib/postgresql/14/bin/initdb -D /var/lib/postgresql/14/main --auth-local peer --auth-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/14/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Asia/Kolkata
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+update-alternatives: using /usr/share/postgresql/14/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Setting up postgresql-contrib (14+238) ...
+Setting up postgresql (14+238) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.9) ...
+Scanning processes...
+Scanning candidates...
+Scanning linux images...
+
+Restarting services...
+Service restarts being deferred:
+ systemctl restart ModemManager.service
+ systemctl restart cron.service
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart irqbalance.service
+ systemctl restart mongod.service
+ systemctl restart multipathd.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart open-vm-tools.service
+ systemctl restart packagekit.service
+ systemctl restart polkit.service
+ systemctl restart rpcbind.service
+ systemctl restart rsyslog.service
+ systemctl restart ssh.service
+ systemctl restart systemd-journald.service
+ systemctl restart systemd-logind.service
+ /etc/needrestart/restart.d/systemd-manager
+ systemctl restart systemd-networkd.service
+ systemctl restart systemd-resolved.service
+ systemctl restart systemd-timesyncd.service
+ systemctl restart systemd-udevd.service
+ systemctl restart udisks2.service
+ systemctl restart unattended-upgrades.service
+ systemctl restart upower.service
+ systemctl restart user@1000.service
+ systemctl restart user@1001.service
+ systemctl restart vgauth.service
+ systemctl restart zabbix-agent.service
+ systemctl restart zabbix-agent2.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+touadmin@dev-shared-postgres:/postgres$ sudo mkdir -p /postgresql/data
+touadmin@dev-shared-postgres:/postgres$ sudo chown -R postgres:postgres /postgresql/data
+touadmin@dev-shared-postgres:/postgres$ sudo chmod 700 /postgresql/data
+touadmin@dev-shared-postgres:/postgres$ sudo mkdir -p /postgresql/logs
+touadmin@dev-shared-postgres:/postgres$ sudo chown -R postgres:postgres /postgresql/logs
+touadmin@dev-shared-postgres:/postgres$ sudo chmod 700 /postgresql/logs
+touadmin@dev-shared-postgres:/postgres$ sudo -i -u postgres
+postgres@dev-shared-postgres:~$ /usr/pgsql-*/bin/initdb -D /postgresql/data
+-bash: /usr/pgsql-*/bin/initdb: No such file or directory
+postgres@dev-shared-postgres:~$ /usr/
+bin/     games/   include/ lib/     lib32/   lib64/   libexec/ libx32/  local/   sbin/    share/   src/
+postgres@dev-shared-postgres:~$ /usr/
+bin/     games/   include/ lib/     lib32/   lib64/   libexec/ libx32/  local/   sbin/    share/   src/
+postgres@dev-shared-postgres:~$ /usr/lib/postgresql/14/bin/initdb -D /postgres
+postgres/   postgresql/
+postgres@dev-shared-postgres:~$ /usr/lib/postgresql/14/bin/initdb -D /postgres
+postgres/   postgresql/
+postgres@dev-shared-postgres:~$ /usr/lib/postgresql/14/bin/initdb -D /postgresql/data/
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Asia/Kolkata
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+initdb: warning: enabling "trust" authentication for local connections
+You can change this by editing pg_hba.conf or using the option -A, or
+--auth-local and --auth-host, the next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/14/bin/pg_ctl -D /postgresql/data/ -l logfile start
+
+postgres@dev-shared-postgres:~$  
+touadmin@dev-shared-postgres:/postgres$ sudo systemctl start postgresql
+touadmin@dev-shared-postgres:/postgres$ sudo systemctl enable postgresql
+Synchronizing state of postgresql.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable postgresql
+touadmin@dev-shared-postgres:/postgres$
+touadmin@dev-shared-postgres:/postgres$ sudo systemctl status postgresql
+? postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Thu 2025-03-06 17:39:07 IST; 11min ago
+   Main PID: 2311783 (code=exited, status=0/SUCCESS)
+        CPU: 2ms
+
+Mar 06 17:39:07 dev-shared-postgres systemd[1]: Starting PostgreSQL RDBMS...
+Mar 06 17:39:07 dev-shared-postgres systemd[1]: Finished PostgreSQL RDBMS.
+touadmin@dev-shared-postgres:/postgres$
+touadmin@dev-shared-postgres:/postgres$ sudo su -
+root@dev-shared-postgres:~#
+root@dev-shared-postgres:~# cd  /postgresql/logs/
+root@dev-shared-postgres:/postgresql/logs#
+root@dev-shared-postgres:/postgresql/logs# ls
+root@dev-shared-postgres:/postgresql/logs#
+root@dev-shared-postgres:/postgresql/logs# psql -U postgres -c "SHOW data_directory;"
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "postgres"
+root@dev-shared-postgres:/postgresql/logs#
+root@dev-shared-postgres:/postgresql/logs# sudo -i -u postgres psql -c "SHOW data_directory;"
+       data_directory
+-----------------------------
+ /var/lib/postgresql/14/main
+(1 row)
+
+root@dev-shared-postgres:/postgresql/logs# sudo systemctl stop postgresql
+root@dev-shared-postgres:/postgresql/logs# sudo mv /var/lib/postgresql/14/main /var/lib/postgresql/14/main_backup
+root@dev-shared-postgres:/postgresql/logs# sudo -u postgres /usr/lib/postgresql/14/bin/initdb -D /postgresql/data
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+initdb: error: directory "/postgresql/data" exists but is not empty
+If you want to create a new database system, either remove or empty
+the directory "/postgresql/data" or run initdb
+with an argument other than "/postgresql/data".
+root@dev-shared-postgres:/postgresql/logs# su postgres
+postgres@dev-shared-postgres:/postgresql/logs$ sudo -u postgres /usr/lib/postgresql/14/bin/initdb -D /postgresql/data
+postgres is not in the sudoers file.  This incident will be reported.
+postgres@dev-shared-postgres:/postgresql/logs$
+postgres@dev-shared-postgres:/postgresql/logs$  -u postgres /usr/lib/postgresql/14/bin/initdb -D /postgresql/data
+-u: command not found
+postgres@dev-shared-postgres:/postgresql/logs$ sudo vi /etc/postgresql/14/main/postgresql.conf
+[sudo] password for postgres:
+sudo: a password is required
+postgres@dev-shared-postgres:/postgresql/logs$ vi /etc/postgresql/14/main/postgresql.conf
+postgres@dev-shared-postgres:/postgresql/logs$
+postgres@dev-shared-postgres:/postgresql/logs$ exit
+exit
+root@dev-shared-postgres:/postgresql/logs# sudo chown -R postgres:postgres /postgresql/data
+sudo chmod 700 /postgresql/data
+root@dev-shared-postgres:/postgresql/logs# sudo chmod 700 /postgresql/data
+root@dev-shared-postgres:/postgresql/logs# sudo chown -R postgres:postgres /postgresql/data
+root@dev-shared-postgres:/postgresql/logs# sudo chmod 700 /postgresql/data
+root@dev-shared-postgres:/postgresql/logs# sudo systemctl start postgresql
+root@dev-shared-postgres:/postgresql/logs# sudo -i -u postgres psql -c "SHOW data_directory;"
+  data_directory
+------------------
+ /postgresql/data
+(1 row)
+
+root@dev-shared-postgres:/postgresql/logs# ls /postgresql/logs
+root@dev-shared-postgres:/postgresql/logs# su postgres
+postgres@dev-shared-postgres:/postgresql/logs$ vi /etc/postgresql/14/main/postgresql.conf
+postgres@dev-shared-postgres:/postgresql/logs$ 
+root@dev-shared-postgres:/postgresql/logs# sudo chown -R postgres:postgres /postgresql/logs
+root@dev-shared-postgres:/postgresql/logs# sudo chmod 700 /postgresql/logs
+root@dev-shared-postgres:/postgresql/logs# sudo systemctl start postgresql
+root@dev-shared-postgres:/postgresql/logs# sudo -i -u postgres psql -c "SHOW log_directory;"
+  log_directory
+------------------
+ /postgresql/logs
+(1 row)
+
+root@dev-shared-postgres:/postgresql/logs# ls /postgresql/logs
+root@dev-shared-postgres:/postgresql/logs#
+root@dev-shared-postgres:/postgresql/logs# psql -U postgres
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "postgres"
+root@dev-shared-postgres:/postgresql/logs#
+root@dev-shared-postgres:/postgresql/logs# su postgres
+postgres@dev-shared-postgres:/postgresql/logs$ psql
+psql (14.17 (Ubuntu 14.17-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# exit
+postgres@dev-shared-postgres:/postgresql/logs$
+postgres@dev-shared-postgres:/postgresql/logs$
+postgres@dev-shared-postgres:/postgresql/logs$ exit
+exit
+root@dev-shared-postgres:/postgresql/logs# sudo -u postgres psql
+psql (14.17 (Ubuntu 14.17-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(3 rows)
+
+postgres=# ALTER USER postgres PASSWORD 'P0$tgre$Ql';
+postgres=# exit
+root@dev-shared-postgres:/postgresql/logs# 
+root@dev-shared-postgres:/postgresql/logs# sudo nano /etc/postgresql/14/main/pg_hba.conf
+
+Modify Authentication Method: Find the line for local connections (which will typically look like this):
+local   all             postgres                                peer
+Change peer to md5 (password-based authentication):
+local   all             postgres                                md5
+
+root@dev-shared-postgres:/postgresql/logs#
+root@dev-shared-postgres:/postgresql/logs# sudo systemctl restart postgresql
+root@dev-shared-postgres:/postgresql/logs# sudo -u postgres psql
+Password for user postgres:
+psql (14.17 (Ubuntu 14.17-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# show dbs
+postgres-# \l4
+invalid command \l4
+Try \? for help.
+postgres-# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(3 rows)
+
+postgres-#
+postgres-#
+postgres-#
