@@ -1,14 +1,14 @@
     +----------------------------------------------------------------------+
-    ¦                 • MobaXterm Personal Edition v25.0 •                 ¦
-    ¦               (SSH client, X server and network tools)               ¦
-    ¦                                                                      ¦
-    ¦ ? SSH session to touadmin@192.1xx.xx.xxx                             ¦
-    ¦   • Direct SSH      :  ?                                             ¦
-    ¦   • SSH compression :  ?                                             ¦
-    ¦   • SSH-browser     :  ?                                             ¦
-    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
-    ¦                                                                      ¦
-    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    Â¦                 â€¢ MobaXterm Personal Edition v25.0 â€¢                 Â¦
+    Â¦               (SSH client, X server and network tools)               Â¦
+    Â¦                                                                      Â¦
+    Â¦ ? SSH session to touadmin@192.1xx.xx.xxx                             Â¦
+    Â¦   â€¢ Direct SSH      :  ?                                             Â¦
+    Â¦   â€¢ SSH compression :  ?                                             Â¦
+    Â¦   â€¢ SSH-browser     :  ?                                             Â¦
+    Â¦   â€¢ X11-forwarding  :  ?  (remote display is forwarded through SSH)  Â¦
+    Â¦                                                                      Â¦
+    Â¦ ? For more info, ctrl+click on help or visit our website.            Â¦
     +----------------------------------------------------------------------+
 
 Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 5.15.0-125-generic x86_64)
@@ -331,22 +331,12 @@ initdb: error: directory "/postgresql/data" exists but is not empty
 If you want to create a new database system, either remove or empty
 the directory "/postgresql/data" or run initdb
 with an argument other than "/postgresql/data".
-root@dev-shared-postgres:/postgresql/logs# su postgres
-postgres@dev-shared-postgres:/postgresql/logs$ sudo -u postgres /usr/lib/postgresql/14/bin/initdb -D /postgresql/data
-postgres is not in the sudoers file.  This incident will be reported.
-postgres@dev-shared-postgres:/postgresql/logs$
-postgres@dev-shared-postgres:/postgresql/logs$  -u postgres /usr/lib/postgresql/14/bin/initdb -D /postgresql/data
--u: command not found
-postgres@dev-shared-postgres:/postgresql/logs$ sudo vi /etc/postgresql/14/main/postgresql.conf
-[sudo] password for postgres:
-sudo: a password is required
+root@dev-shared-postgres:/postgresql/logs# 
 postgres@dev-shared-postgres:/postgresql/logs$ vi /etc/postgresql/14/main/postgresql.conf
-postgres@dev-shared-postgres:/postgresql/logs$
+postgres@dev-shared-postgres:/postgresql/logs$  
+set  data_directory = '/postgresql/data' 
 postgres@dev-shared-postgres:/postgresql/logs$ exit
 exit
-root@dev-shared-postgres:/postgresql/logs# sudo chown -R postgres:postgres /postgresql/data
-sudo chmod 700 /postgresql/data
-root@dev-shared-postgres:/postgresql/logs# sudo chmod 700 /postgresql/data
 root@dev-shared-postgres:/postgresql/logs# sudo chown -R postgres:postgres /postgresql/data
 root@dev-shared-postgres:/postgresql/logs# sudo chmod 700 /postgresql/data
 root@dev-shared-postgres:/postgresql/logs# sudo systemctl start postgresql
@@ -360,6 +350,7 @@ root@dev-shared-postgres:/postgresql/logs# ls /postgresql/logs
 root@dev-shared-postgres:/postgresql/logs# su postgres
 postgres@dev-shared-postgres:/postgresql/logs$ vi /etc/postgresql/14/main/postgresql.conf
 postgres@dev-shared-postgres:/postgresql/logs$ 
+set log_directory = '/postgresql/logs' 
 root@dev-shared-postgres:/postgresql/logs# sudo chown -R postgres:postgres /postgresql/logs
 root@dev-shared-postgres:/postgresql/logs# sudo chmod 700 /postgresql/logs
 root@dev-shared-postgres:/postgresql/logs# sudo systemctl start postgresql
@@ -378,7 +369,6 @@ root@dev-shared-postgres:/postgresql/logs# su postgres
 postgres@dev-shared-postgres:/postgresql/logs$ psql
 psql (14.17 (Ubuntu 14.17-0ubuntu0.22.04.1))
 Type "help" for help.
-
 postgres=# exit
 postgres@dev-shared-postgres:/postgresql/logs$
 postgres@dev-shared-postgres:/postgresql/logs$
