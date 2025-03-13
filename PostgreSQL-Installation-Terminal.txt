@@ -1,7 +1,8 @@
 
 venkata@postgresdb-p1:~# ================== PostgreSQL Installation on Ubuntu 22.0 =================================================^C
-venkata@postgresdb-p1:~# Update  Package List:^C
+venkata@postgresdb-p1:~# Update  Package List:
 venkata@postgresdb-p1:~# sudo apt update
+===========================================
 Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
 Get:2 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 InRelease [3,005 B]
 Hit:3 http://in.archive.ubuntu.com/ubuntu jammy InRelease
@@ -27,8 +28,9 @@ Building dependency tree... Done
 Reading state information... Done
 74 packages can be upgraded. Run 'apt list --upgradable' to see them.
 venkata@postgresdb-p1:~#
-venkata@postgresdb-p1:~# Install PostgreSQL^C
+venkata@postgresdb-p1:~# Install PostgreSQL
 venkata@postgresdb-p1:~# sudo apt install postgresql postgresql-contrib
+========================================================================
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
@@ -222,7 +224,7 @@ venkata@postgresdb-p1:~# sudo systemctl status postgresql
 Feb 28 07:50:10 mongodb-rep1 systemd[1]: Starting PostgreSQL RDBMS...
 Feb 28 07:50:10 mongodb-rep1 systemd[1]: Finished PostgreSQL RDBMS.
 venkata@postgresdb-p1:~#
-venkata@postgresdb-p1:~# Switch to the PostgreSQL User^C
+venkata@postgresdb-p1:~# Switch to the PostgreSQL User 
 venkata@postgresdb-p1:~# sudo -i -u postgres
 postgres@mongodb-rep1:~$ Now, you are logged in as the postgres user.^C
 postgres@mongodb-rep1:~$
@@ -230,7 +232,6 @@ postgres@mongodb-rep1:~$ Access the PostgreSQL Command Line Interface (CLI)^C
 postgres@mongodb-rep1:~$ psql
 psql (14.15 (Ubuntu 14.15-0ubuntu0.22.04.1))
 Type "help" for help.
-
 postgres=# 
 postgres=# 
 postgres@mongodb-rep1:~$
