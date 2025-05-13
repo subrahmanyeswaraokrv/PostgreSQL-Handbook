@@ -131,3 +131,17 @@ PgBouncer + Scripts	❌	❌	✅	Requires custom logic
 Crunchy Operator	✅	✅	✅	Kubernetes-native
 AWS RDS/Aurora	✅	✅	✅	Managed service
 BDR	✅	✅	❌	Multi-master
+
+ High Availability (HA) solution 
+=========================================
+Streaming Replication + repmgr (lightweight, classic HA)
+
+Patroni + etcd/Consul (cloud-native, production-grade)
+
+Pgpool-II HA (with load balancing and connection pooling)
+
+PgBouncer + custom failover scripts (minimal, script-based HA)
+
+Kubernetes-native HA with Patroni or CrunchyData Operator
+
+Cloud-native (e.g., AWS RDS / Aurora PostgreSQL HA)
